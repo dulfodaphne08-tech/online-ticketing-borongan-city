@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Borongan Transport - Driver Dashboard</title>
+	<link rel="icon" type="image/jpeg" href="images/borongan-logo.jpg">
+	<link rel="stylesheet" href="assets/css/driver-dashboard.css">
+</head>
+<body>
+	<main class="driver-shell">
+		<header class="driver-header">
+			<div>
+				<p class="eyebrow">Borongan Transport</p>
+				<h1>Driver Dashboard</h1>
+			</div>
+			<button type="button" id="logoutButton" class="logout-button">Log out</button>
+		</header>
+
+		<section class="welcome-panel" aria-labelledby="welcomeTitle">
+			<p class="eyebrow">Signed in driver</p>
+			<h2 id="welcomeTitle">Welcome</h2>
+			<p id="driverStatus" class="muted">Loading your account...</p>
+		</section>
+
+		<section class="details-grid" aria-label="Driver details">
+			<article class="detail-card"><span>Driver ID</span><strong id="driverId">-</strong></article>
+			<article class="detail-card"><span>Vehicle</span><strong id="vehicleType">-</strong></article>
+			<article class="detail-card"><span>Plate number</span><strong id="plateNumber">-</strong></article>
+			<article class="detail-card"><span>License number</span><strong id="licenseNumber">-</strong></article>
+		</section>
+	</main>
+	<script src="assets/js/driver-dashboard.js"></script>
+</body>
+</html>
