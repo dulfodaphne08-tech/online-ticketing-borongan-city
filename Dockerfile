@@ -5,7 +5,6 @@ RUN apt-get update \
 	&& docker-php-ext-install pdo_pgsql \
 	&& docker-php-ext-enable pdo_pgsql \
 	&& php -m | grep -q '^pdo_pgsql$' \
-	&& apt-get purge -y --auto-remove libpq-dev \
 	&& rm -rf /var/lib/apt/lists/*
 
 COPY . /var/www/html/
