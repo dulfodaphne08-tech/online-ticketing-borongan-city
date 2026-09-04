@@ -3,6 +3,8 @@
 -- PostgreSQL Database Schema for Supabase
 -- ==========================================================
 
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
 -- 1. Users Table (Administrators and Drivers)
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
@@ -110,8 +112,10 @@ ON CONFLICT (vehicle_type) DO UPDATE SET amount = EXCLUDED.amount;
 -- Password: Admin@123456
 -- (Hashed with bcrypt PASSWORD_DEFAULT)
 INSERT INTO users (username, password, role)
-VALUES ('admin', '$2y$12$mA1Ol6DGkUje5lyvKIreqOB.JEsqm6RoY3LYuCaPZnWtdf1JS99Q2', 'admin')
-ON CONFLICT (username) DO NOTHING;
+VALUES ('admin', crypt('Admin@123456', gen_salt('bf', 12)), 'admin')
+ON CONFLICT (username) DO UPDATE
+SET password = EXCLUDED.password,
+    role = EXCLUDED.role;
 
 -- Initial activity log entry
 INSERT INTO activities (action, details, badge_class)

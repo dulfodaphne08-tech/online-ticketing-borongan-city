@@ -197,6 +197,7 @@
           loginBtn.disabled = false;
           loginBtn.innerHTML = "Login as Admin";
           if (errorDiv) {
+            errorDiv.textContent = data.error || "Invalid username or password.";
             errorDiv.classList.add("show");
             setTimeout(() => errorDiv.classList.remove("show"), 3000);
           } else {
