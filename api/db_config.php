@@ -11,7 +11,7 @@ defined('SUPABASE_URI')     || define('SUPABASE_URI',     getenv('SUPABASE_URI')
 defined('SUPABASE_HOST')    || define('SUPABASE_HOST',    getenv('SUPABASE_HOST')    ?: 'aws-0-ap-southeast-1.pooler.supabase.com');
 defined('SUPABASE_PORT')    || define('SUPABASE_PORT',    getenv('SUPABASE_PORT')    ?: '5432');
 defined('SUPABASE_DB')      || define('SUPABASE_DB',      getenv('SUPABASE_DB')      ?: 'postgres');
-defined('SUPABASE_USER')    || define('SUPABASE_USER',    getenv('SUPABASE_USER')    ?: 'postgres.fmldzkgqmzipdxzpshh');
+defined('SUPABASE_USER')    || define('SUPABASE_USER',    getenv('SUPABASE_USER')    ?: 'postgres.lmwjnhlegodamitwwvem');
 defined('SUPABASE_PASS')    || define('SUPABASE_PASS',    getenv('SUPABASE_PASS')    ?: '');
 defined('SUPABASE_SSLMODE') || define('SUPABASE_SSLMODE', getenv('SUPABASE_SSLMODE') ?: 'require');
 
